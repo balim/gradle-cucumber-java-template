@@ -1,7 +1,17 @@
 apply plugin: 'java'
 
-ext.seleniumVersion = '2.46.0'
-ext.cucumberVersion = '1.2.3'
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+repositories {
+    jcenter()
+}
+
+ext.seleniumVersion = '2.53.0'
+ext.cucumberVersion = '1.2.4'
 
 dependencies {
     compile group: 'org.seleniumhq.selenium', name: 'selenium-firefox-driver', version:seleniumVersion
