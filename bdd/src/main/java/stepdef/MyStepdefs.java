@@ -4,6 +4,7 @@ import com.google.inject.Inject;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import initiate.State;
+import org.openqa.selenium.support.PageFactory;
 import pageobjects.HomePage;
 
 import static org.junit.Assert.assertEquals;
@@ -19,6 +20,7 @@ public class MyStepdefs {
     public MyStepdefs(State state) {
         this.state = state;
         this.homePage = new HomePage(state.webDriver);
+        PageFactory.initElements(state.webDriver, homePage);
     }
 
     @Given("^User goes to the home page$")
