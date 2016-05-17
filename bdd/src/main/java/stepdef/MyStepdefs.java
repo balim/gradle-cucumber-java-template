@@ -1,9 +1,9 @@
 package stepdef;
 
+import com.google.inject.Inject;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+import initiate.State;
 import pageobjects.HomePage;
 
 import static org.junit.Assert.assertEquals;
@@ -12,12 +12,17 @@ public class MyStepdefs {
 
     private final String START = "http://localhost:8080/start";
 
-    HomePage homePage;
+    private State state;
+    private HomePage homePage;
+
+    @Inject
+    public MyStepdefs(State state) {
+        this.state = state;
+        this.homePage = new HomePage(state.webDriver);
+    }
 
     @Given("^User goes to the home page$")
     public void openHomePage() throws Throwable {
-        WebDriver webDriver = new ChromeDriver();
-        homePage = new HomePage(webDriver);
         homePage.navigateTo(START);
     }
 

@@ -4,12 +4,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class HomePage extends PageObject {
+public class BBCPage extends PageObject {
 
-    @FindBy(id = "result")
-    public WebElement result;
-
-    public HomePage(WebDriver webDriver) {
+    public BBCPage(WebDriver webDriver) {
         super(webDriver);
     }
+
+    @FindBy(partialLinkText = "News")
+    public WebElement bbcNewsLink;
+
 }

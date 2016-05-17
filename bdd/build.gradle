@@ -19,6 +19,8 @@ dependencies {
     compile group: 'org.seleniumhq.selenium', name: 'selenium-api', version:seleniumVersion
     compile group: 'org.seleniumhq.selenium', name: 'selenium-java', version:seleniumVersion
 
+    compile group: 'com.google.inject', name: 'guice', version: '3.0'
+
     compile group: 'info.cukes', name: 'cucumber-junit', version:cucumberVersion
     compile group: 'info.cukes', name: 'cucumber-java', version:cucumberVersion
     compile group: 'info.cukes', name: 'cucumber-picocontainer', version:cucumberVersion
