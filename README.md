@@ -15,14 +15,14 @@ There are currently two cucumber feature files. One tests an external site (BBC 
 
 ## Run Spring boot app
 
-'''
+```
 ./gradlew bootRun
-'''
+```
 
 ## Run cucumber tests
 
-'''
+```
 ./gradlew runTests
-'''
+```
 
 
